@@ -4,9 +4,25 @@ All notable changes to `phil/translation-bundle` will be documented in this file
 
 Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## 0.2.1-alpha - 2026-11-25
+
+### Changed
+
+- Requires the latest minor of each dependency (`doctrine/orm` 3.8, `doctrine/dbal` 4.6, `twig/twig` 3.31), and of
+  each development requirement (`doctrine/doctrine-bundle` 3.4, `easycorp/easyadmin-bundle` 5.10).
+- The development requirements take `easycorp/easyadmin-bundle` 5.10.4 or later, the release that fixes
+  GHSA-f7rw-7wx5-3c54: a link to a route, like the menu links of this bundle, passed its `routeParams` to the controller
+  of that route as arguments.
+
+### Security
+
+- Requires `twig/twig` 3.31.1 or later, which fixes the advisories of its sandbox published on 2026-11-24.
+- Conflicts with `easycorp/easyadmin-bundle` below 5.10.4, the release that fixes GHSA-f7rw-7wx5-3c54: an application
+  cannot install this bundle next to a vulnerable EasyAdmin, which stays optional.
+
 ## 0.2.0-alpha - 2026-11-18
 
-The next version is 0.2.0-alpha: the keys of the segments, memory, terms and comments compare byte by byte on MySQL and
+The keys of the segments, memory, terms and comments compare byte by byte on MySQL and
 MariaDB. See [Upgrading from 0.1](doc/storage.md#upgrading-from-01).
 
 ### Added
